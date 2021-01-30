@@ -1,0 +1,62 @@
+toring the cluster
+##
+defaultRules:
+  create: true
+  rules:
+    alertmanager: false
+    etcd: true
+    general: true
+    k8s: true
+    kubeApiserver: true
+    kubeApiserverAvailability: true
+    kubeApiserverError: true
+    kubeApiserverSlos: true
+    kubelet: true
+    kubePrometheusGeneral: true
+    kubePrometheusNodeAlerting: true
+    kubePrometheusNodeRecording: true
+    kubernetesAbsent: true
+    kubernetesApps: true
+    kubernetesResources: true
+    kubernetesStorage: true
+    kubernetesSystem: true
+    kubeScheduler: true
+    kubeStateMetrics: true
+    network: true
+    node: true
+    prometheus: true
+    prometheusOperator: true
+    time: true
+
+  ## Runbook url prefix for default rules
+  runbookUrl: https://github.com/kubernetes-monitoring/kubernetes-mixin/tree/master/runbook.md#
+  ## Reduce app namespace alert scope
+  appNamespacesTarget: ".*"
+
+
+## Provide custom recording or alerting rules to be deployed into the cluster.
+##
+additionalPrometheusRulesMap: {}
+
+global:
+  rbac:
+    create: true
+    pspEnabled: true
+    pspAnnotations: {}
+
+## Configuration for alertmanager
+## ref: https://prometheus.io/docs/alerting/alertmanager/
+##
+alertmanager:
+
+  ## Deploy alertmanager
+  ##
+  enabled: false
+
+  ## Api that prometheus will use to communicate with alertmanager. Possible values are v1, v2
+  ##
+  apiVersion: v2
+
+  serviceAccount:
+    create: true
+    annotations: {}

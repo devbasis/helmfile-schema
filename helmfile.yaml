@@ -1,0 +1,5 @@
+{{ readFile "base/templates/templates.yaml" }}
+
+{{ readFile "base/repositories/repositories.yaml" }}
+
+releases:

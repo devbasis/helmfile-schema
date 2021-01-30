@@ -1,0 +1,6 @@
+- <<: *defaultTmpl
+  name: grafana
+  chart: grafana/grafana
+  namespace: monitoring
+  version: 3.2.5
+  installed: {{ .Values | getOrNil "grafana.installed" | default false }}

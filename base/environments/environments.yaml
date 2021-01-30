@@ -1,0 +1,7 @@
+environments:
+  production:
+    values:
+      - base/values/production/values.yaml.gotmpl
+  minikube:
+    values:
+      - base/values/minikube/values.yaml.gotmpl

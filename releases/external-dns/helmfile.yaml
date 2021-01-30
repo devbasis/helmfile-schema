@@ -1,0 +1,6 @@
+- <<: *defaultTmpl
+  name: external-dns
+  chart: bitnami/external-dns
+  namespace: external-dns
+  version: 3.2.5
+  installed: {{ .Values | getOrNil "external-dns.installed" | default false }}

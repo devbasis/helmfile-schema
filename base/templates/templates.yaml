@@ -1,0 +1,10 @@
+bases:
+  - base/environments/environments.yaml
+  - base/defaults/defaults.yaml
+
+templates:
+  defaultTmpl: &defaultTmpl
+    missingFileHandler: Warn
+    valuesTemplate:
+      - base/values/{{ .Environment.Name }}/values.yaml.gotmpl
+      - releases/{{ .Release.Name }}/values.yaml.gotmpl

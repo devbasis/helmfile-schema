@@ -1,0 +1,5 @@
+- <<: *defaultTmpl
+  name: prometheus
+  chart: prometheus-community/kube-prometheus-stack
+  namespace: operators
+  installed: {{ .Values | getOrNil "prometheus.installed" | default false }}
